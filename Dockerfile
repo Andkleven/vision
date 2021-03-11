@@ -7,7 +7,7 @@ RUN apt update && apt install -y zip screen libgl1-mesa-glx
 
 # Install python dependencies
 COPY requirements.txt .
-RUN python3 -m pip install --upgrade pip==20.2
+RUN python3 -m pip install --upgrade pip
 RUN pip3 install -r requirements.txt gsutil 
 #RUN pip3 install --no-cache -r requirements.txt gsutil notebook
 

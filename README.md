@@ -31,3 +31,11 @@
     ```console
     sudo docker ps -a
     ```
+1.  Clean up
+    ```console
+    docker system prune
+    ```
+1.  Clean up
+    ```console
+    docker system prune -a
+    ```
