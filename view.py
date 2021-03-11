@@ -3,6 +3,6 @@
 from math import atan
 
 def field_of_view(length, horizontal=True, vertical=False):
-    degrees = 48.8
-    if horizontal: degrees = 62.2
+    degrees = 48.8/2
+    if horizontal: degrees = 62.2/2
     return atan(degrees)*length
