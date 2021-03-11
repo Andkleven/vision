@@ -2,6 +2,10 @@
 # FROM nvcr.io/nvidia/pytorch:21.02-py3
 FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
 
+# download pretrained  model
+RUN mkdir -p /vision/pretrained/
+ADD https://drive.google.com/u/0/uc?id=1lvyZZbC9NLcS8a__YPcUP7rDiIpbRpoF&export=download /vision/pretrained/
+
 # Install linux packages
 RUN apt update && apt install -y zip screen libgl1-mesa-glx
 
@@ -12,7 +16,6 @@ RUN pip3 install -r requirements.txt gsutil
 #RUN pip3 install --no-cache -r requirements.txt gsutil notebook
 
 # Create working directory
-RUN mkdir -p /vision
 WORKDIR /vision
 
 # Copy contents
