@@ -6,7 +6,7 @@ FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
 RUN apt update && apt install -y zip screen libgl1-mesa-glx
 
 # Install python dependencies
-RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip==20.2
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt gsutil 
 #RUN pip3 install --no-cache -r requirements.txt gsutil notebook
