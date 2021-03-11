@@ -1,0 +1,5 @@
+# General
+# .vscode/ # Contains fix for multiple python roots
+__pycache__/
+output/*
+pretrained/*
