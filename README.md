@@ -33,11 +33,11 @@
     ```
 1.  Clean up
     ```console
-    docker system prune
+    sudo docker system prune
     ```
 1.  Clean up
     ```console
-    docker system prune -a
+    sudo docker system prune -a
     ```
 
 python3 detect.py --source "input/trash.jpg" --weights "detection_weights.pt" --img-size 640 --conf 0.675 --exist-ok --name output
