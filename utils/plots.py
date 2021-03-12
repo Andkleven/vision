@@ -16,8 +16,6 @@ import seaborn as sns
 import torch
 import yaml
 from PIL import Image, ImageDraw, ImageFont
-from scipy.signal import butter, filtfilt
-
 from utils.general import xywh2xyxy, xyxy2xywh
 from utils.metrics import fitness
 
@@ -41,17 +39,6 @@ def hist2d(x, y, n=100):
     xidx = np.clip(np.digitize(x, xedges) - 1, 0, hist.shape[0] - 1)
     yidx = np.clip(np.digitize(y, yedges) - 1, 0, hist.shape[1] - 1)
     return np.log(hist[xidx, yidx])
-
-
-def butter_lowpass_filtfilt(data, cutoff=1500, fs=50000, order=5):
-    # https://stackoverflow.com/questions/28536191/how-to-filter-smooth-with-scipy-numpy
-    def butter_lowpass(cutoff, fs, order):
-        nyq = 0.5 * fs
-        normal_cutoff = cutoff / nyq
-        return butter(order, normal_cutoff, btype='low', analog=False)
-
-    b, a = butter_lowpass(cutoff, fs, order=order)
-    return filtfilt(b, a, data)  # forward-backward filter
 
 
 def plot_one_box(x, img, color=None, label=None, line_thickness=3):
@@ -383,8 +370,6 @@ def plot_results_overlay(start=0, stop=0):  # from utils.plots import *; plot_re
             for j in [i, i + 5]:
                 y = results[j, x]
                 ax[i].plot(x, y, marker='.', label=s[j])
-                # y_smooth = butter_lowpass_filtfilt(y)
-                # ax[i].plot(x, np.gradient(y_smooth), marker='.', label=s[j])
 
             ax[i].set_title(t[i])
             ax[i].legend()
