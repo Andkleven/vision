@@ -13,8 +13,8 @@ RUN python3 -m pip install --upgrade pip
 RUN pip3 install -r requirements.txt gsutil 
 #RUN pip3 install --no-cache -r requirements.txt gsutil notebook
 
-RUN mkdir -p /vision/pretrained/
-ADD https://drive.google.com/u/0/uc?id=1lvyZZbC9NLcS8a__YPcUP7rDiIpbRpoF&export=download /vision/pretrained/
+RUN mkdir -p /vision
+# ADD https://drive.google.com/u/0/uc?id=1lvyZZbC9NLcS8a__YPcUP7rDiIpbRpoF&export=download /vision/pretrained/
 # Create working directory
 WORKDIR /vision
 

@@ -1,7 +1,7 @@
 # pip install -r requirements.txt
 
 # base ----------------------------------------
-matplotlib>=3.2.2,<4
+# matplotlib>=3.2.2,<4
 # numpy>=1.18.5,<1.20
 opencv-python==4.5.1.48
 # scipy==1.4.1
