@@ -14,7 +14,7 @@
 ### Run docker
 
 1.  ```console
-    sudo docker run -it --rm --runtime nvidia --gpus all -v /home/vision:/home ID
+    sudo docker run -it --rm --runtime nvidia --gpus all -v /home/vision:/home <IMAGE ID>
     ```
 
 #### Docker commends
