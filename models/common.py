@@ -4,7 +4,7 @@ import math
 from pathlib import Path
 
 import numpy as np
-import requests
+#import requests
 import torch
 import torch.nn as nn
 from PIL import Image
