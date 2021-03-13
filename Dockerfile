@@ -22,7 +22,7 @@ WORKDIR /vision
 COPY . /vision
 
 RUN git clone https://github.com/shariqfarooq123/AdaBins.git 
-RUN git clone https://github.com/ultralytics/yolov5.git
+RUN git clone --depth 1 --branch v3.1 https://github.com/ultralytics/yolov5.git
 # Set environment variables
 ENV HOME=/vision
 
