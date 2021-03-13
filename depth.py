@@ -37,8 +37,9 @@ plt.show()
 
 
 # # NYU
-# model = UnetAdaptiveBins.build(n_bins=N_BINS, min_val=MIN_DEPTH, max_val=MAX_DEPTH_NYU)
-# pretrained_path = "./pretrained/AdaBins_nyu.pt"
-# model, _, _ = model_io.load_checkpoint(pretrained_path, model)
+model = UnetAdaptiveBins.build(n_bins=N_BINS, min_val=MIN_DEPTH, max_val=MAX_DEPTH_NYU)
+pretrained_path = "./pretrained/AdaBins_nyu.pt"
+model, _, _ = model_io.load_checkpoint(pretrained_path, model)
 
-# bin_edges, predicted_depth = model(example_rgb_batch)
+bin_edges, predicted_depth = model(example_rgb_batch)
+print(bin_edges, predicted_depth)
