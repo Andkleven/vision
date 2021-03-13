@@ -7,13 +7,14 @@ FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
 
 # Install linux packages
 RUN apt update && apt install -y zip screen libgl1-mesa-glx
-RUN apt install curl
-RUN curl -o https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
-RUN bash Archiconda3-0.2.3-Linux-aarch64.sh
+# RUN apt install -y curl
+# RUN curl -O https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
+COPY Archiconda3-0.2.3-Linux-aarch64.sh .
+RUN yes yes | ./Archiconda3-0.2.3-Linux-aarch64.sh
 # Install python dependencies
 COPY requirements.txt .
-RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt gsutil 
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install -r requirements.txt gsutil 
 #RUN pip3 install --no-cache -r requirements.txt gsutil notebook
 
 RUN mkdir -p /vision
@@ -25,7 +26,7 @@ WORKDIR /vision
 COPY . /vision
 
 RUN git clone https://github.com/shariqfarooq123/AdaBins.git 
-RUN git clone --depth 1 --branch v3.1 https://github.com/ultralytics/yolov5.git
+RUN git clone https://github.com/ultralytics/yolov5.git
 
 
 # Set environment variables
