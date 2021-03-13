@@ -1,6 +1,7 @@
 # Start FROM Nvidia PyTorch image https://ngc.nvidia.com/catalog/containers/nvidia:pytorch
 # FROM nvcr.io/nvidia/pytorch:21.02-py3
-FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+# FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+FROM nvcr.io/nvidia/pytorch:21.02-py3
 
 # download pretrained  model
 
