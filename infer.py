@@ -2,10 +2,10 @@ import glob
 import os
 
 import numpy as np
-import torch
-import torch.nn as nn
+# import torch
+# import torch.nn as nn
 from PIL import Image
-from torchvision import transforms
+# from torchvision import transforms
 from tqdm import tqdm
 
 import model_io
@@ -90,8 +90,8 @@ class InferenceHelper:
     def predict_pil(self, pil_image, visualized=False):
         # pil_image = pil_image.resize((640, 480))
         img = np.asarray(pil_image) / 255.
-
-        img = self.toTensor(img).unsqueeze(0).float().to(self.device)
+        print(img)
+        # img = self.toTensor(img).unsqueeze(0).float().to(self.device)
         bin_centers, pred = self.predict(img)
 
         if visualized:
