@@ -1,6 +1,7 @@
 # Start FROM Nvidia PyTorch image https://ngc.nvidia.com/catalog/containers/nvidia:pytorch
 # FROM nvcr.io/nvidia/pytorch:21.02-py3
-FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+# FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+FROM nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 
 
 # download pretrained  model
@@ -9,7 +10,10 @@ FROM nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
 RUN apt update && apt install -y zip screen libgl1-mesa-glx
 # RUN apt install -y curl
 # RUN curl -O https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
-COPY Archiconda3-0.2.3-Linux-aarch64.sh .
+# COPY Archiconda3-0.2.3-Linux-aarch64.sh .
+RUN apt -y wget 
+RUN wget https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
+RUN chmod +x Archiconda3-0.2.3-Linux-aarch64.sh
 RUN yes yes | ./Archiconda3-0.2.3-Linux-aarch64.sh
 # Install python dependencies
 COPY requirements.txt .
