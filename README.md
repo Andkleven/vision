@@ -1,3 +1,9 @@
+### Onnx
+1. Downlaod https://github.com/lutzroeder/netron
+2. Se run_onnx_model.py
+
+
+
 ### Setup Project
 
 1.  ```console
