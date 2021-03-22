@@ -1,3 +1,10 @@
+### Onnx
+1. Downlaod https://github.com/lutzroeder/netron
+2. Se run_onnx_model.py
+
+### Install Jetson Inference
+1. https://github.com/dusty-nv/jetson-inference
+
 ### Setup Project
 
 1.  ```console
