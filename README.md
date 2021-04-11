@@ -1,3 +1,9 @@
+### Jetson Nano
+1. https://developer.nvidia.com/blog/realtime-object-detection-in-10-lines-of-python-on-jetson-nano/
+2. https://www.jetsonhacks.com/2019/10/23/install-ros-on-jetson-nano/
+3. https://github.com/dusty-nv/ros_deep_learning
+
+
 ### Onnx
 1. Downlaod https://github.com/lutzroeder/netron
 2. Se run_onnx_model.py
